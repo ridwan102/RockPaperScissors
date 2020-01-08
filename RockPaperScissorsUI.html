@@ -4,8 +4,28 @@
         <title>rockpaperscissors</title>
     </head>
     <body>
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+        <p>
+            <div id="score"></div>
+            <div id="result"></div>
+        </p>
         <script>
-        
+
+            //gitHub solution for reference
+            //https://github.com/charlotte-hues/rock_paper_scissors/blob/master/rockPaperScissorsScript.js
+            //Main Code
+
+            var computerScore = 0;
+            var playerScore = 0;
+            
+            //calls the button everytime user clicks; then runs the associated functions
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(button => {
+                button.addEventListener('click', playRound);
+                button.addEventListener('click', results);
+            });
 
             function computerPlay(){
                 //computer randomly selects Rock, Paper or Scissor
@@ -21,10 +41,13 @@
                     return ('scissors')
                 } 
             }
+            
+            function playRound(button){
 
-            function playRound(playerSelection, computerSelection){
+                //runs the function to determine who earns the point for the round 
+                const playerSelection = button.target.id;
+                const computerSelection = computerPlay();
 
-                playerSelection = playerSelection.toLowerCase();
 
                 if (playerSelection == 'rock' && computerSelection == 'scissors'){
                     playerScore++;
@@ -65,36 +88,21 @@
                     alert("It's a tie! Try again!");
                     return("It's a tie! Try again!");
                 }
-            }
-            
-            function game(){
-                const playerSelection = prompt("Rock, Paper, Scissors?");
-                const computerSelection = computerPlay();
-                console.log(playRound(playerSelection, computerSelection));
+
             }
             
             function results (){
-                console.log("Computer Score: " + computerScore + " Player Score: " + playerScore);
-                if (computerScore > playerScore){
-                    console.log("Computer Wins the Game!");
+
+                //displays the results of the current round and winner (first to 5 points)
+                document.getElementById('score').innerHTML = "Computer: " + computerScore + " Player Score: " + playerScore; 
+
+                if (computerScore == 5){
+                    document.getElementById('result').innerHTML = "Computer Wins the Game!"; 
                 } 
-                else if (computerScore < playerScore){
-                    console.log("You Beat the Computer!");
-                }
-                else{
-                    console.log("It's a Tie!");
+                else if (playerScore == 5){
+                    document.getElementById('result').innerHTML = "You Win the Game!"; 
                 }
             }
-
-            //Main Code
-            var computerScore = 0;
-            var playerScore = 0;
-
-            for (var round = 0; round < 5; round++) {
-                game();
-            }
-
-            results()
 
             prompt 
         </script>
