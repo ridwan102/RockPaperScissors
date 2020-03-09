@@ -5,6 +5,9 @@
     </head>
     <body>
         <div style="text-align: center;">
+            Rock, Paper, Scissors!
+            <br>
+            <br>
             <button id="rock">Rock</button>
             <button id="paper">Paper</button>
             <button id="scissors">Scissors</button>
@@ -15,27 +18,29 @@
         </div>
         <script>
 
-            //gitHub solution for reference
-            //https://github.com/charlotte-hues/rock_paper_scissors/blob/master/rockPaperScissorsScript.js
-            //Main Code
-
             var computerScore = 0;
             var playerScore = 0;
             
             //calls the button everytime user clicks; then runs the associated functions
             const buttons = document.querySelectorAll('button');
+
+            //as soon as any button is clicked, runs playRound and results functions
             buttons.forEach(button => {
                 button.addEventListener('click', playRound);
                 button.addEventListener('click', results);
             });
 
+            //computer randomly selects Rock, Paper or Scissor
             function computerPlay(){
-                //computer randomly selects Rock, Paper or Scissor
+                
+                //generates random floating-point number between 0 and 1; inclusive of 0 but not 1
                 var computerChoice = Math.random()
 
                 if (computerChoice < 0.34) {
                     return ('rock')
                 } 
+
+                //will not run code unless if statement above is false
                 else if(computerChoice <= 0.67) {
                     return ('paper')
                 } 
@@ -50,7 +55,7 @@
                 const playerSelection = button.target.id;
                 const computerSelection = computerPlay();
 
-
+                //based on the button select by player, will determine who receives point
                 if (playerSelection == 'rock' && computerSelection == 'scissors'){
                     playerScore++;
                     alert("Rock beats Scissor! 1 Point!");
@@ -95,9 +100,10 @@
             
             function results (){
 
-                //displays the results of the current round and winner (first to 5 points)
+                //displays the results of the current round and winner (first to 5 points) on the screen
                 document.getElementById('score').innerHTML = "Computer: " + computerScore + " Player Score: " + playerScore; 
 
+                //determines winner of the game
                 if (computerScore == 5){
                     document.getElementById('result').innerHTML = "Computer Wins the Game!"; 
                 } 
@@ -106,7 +112,6 @@
                 }
             }
 
-            prompt 
         </script>
     </body>
 </html>
