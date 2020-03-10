@@ -2,18 +2,26 @@
 <html>
     <head>
         <title>rockpaperscissors</title>
+
+        <link rel="stylesheet" href="style.css">
+
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/3999d19c50.js" crossorigin="anonymous"></script>
     </head>
-    <body>
-        <div style="text-align: center;">
+    <body style="text-align: center">
+        <section class="intro">
             Let's Rock, Paper, Scissors!
+        </section>
             <br>
             <br>
-            <button id="rock">Rock</button>
-            <button id="paper">Paper</button>
-            <button id="scissors">Scissors</button>
+        <section>
+            <button class="button" id="rock"><i class="fas fa-hand-rock fa-2x"></i></button>
+            <button class="button" id="paper"><i class="fas fa-hand-paper fa-2x"></i></button>
+            <button class="button" id="scissors"><i class="fas fa-hand-scissors fa-2x"></i></button>
+        </section>
             <p>
-            <div id="score"></div>
-            <div id="result"></div>
+            <div class="score" id="score"></div>
+            <div class="result" id="result"></div>
             </p>
         </div>
 

@@ -1,0 +1,28 @@
+.intro {
+    margin-top: 1em;
+    font-family: Arial;
+}
+
+.score{
+    margin-top: 2.5em;
+    font-family: Arial;
+}
+
+.result{
+    margin-top: 1.5em;
+    font-family: Arial;
+    font-weight: bold;
+}
+
+.button {
+    background-color: #000000;
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin:10px;
+    width: 90px;
+    height: 40px;
+}
+
