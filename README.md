@@ -1,3 +1,3 @@
-# Rock, Paper, Scissors
+# Play Rock, Paper, Scissors!
 
-Play Rock, Paper, Scissors against the computer. First to 5 wins.
+Play rock, paper, scissors with the computer in the link above! The first to 5 Wins! 
